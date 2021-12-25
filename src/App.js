@@ -10,12 +10,13 @@ const App1 = () => {
     const [posts, setPosts] = useState([]);
     const [loading, setLoading] = useState(false);
     const [currentpage, setCurrentpage] = useState(1);
-    const postsperpage = 5;
+    const postsperpage = 9;
 
  
 
       useEffect(() => {
         const getPosts = async () => {
+          // setLoading(true)
           await axios.get('https://jsonplaceholder.typicode.com/posts')
                     .then(res => {
                       setPosts(res.data)
@@ -24,7 +25,7 @@ const App1 = () => {
         };
 
           getPosts()
-      },[posts])
+      })
 
       const indexOfLastPost = currentpage * postsperpage;
       const indexOfFirstPost = indexOfLastPost - postsperpage;

@@ -3,7 +3,7 @@ import axios from 'axios';
 
 import Posts from './components/Posts';
 import Pagination from './components/Pagination';
-
+import 'bootstrap/dist/css/bootstrap.css';
 
 const App1 = () => {
 

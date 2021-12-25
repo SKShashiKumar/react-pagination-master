@@ -16,7 +16,6 @@ const App1 = () => {
 
       useEffect(() => {
         const getPosts = async () => {
-          // setLoading(true)
           await axios.get('https://jsonplaceholder.typicode.com/posts')
                     .then(res => {
                       setPosts(res.data)

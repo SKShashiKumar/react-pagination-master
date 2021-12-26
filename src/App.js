@@ -25,7 +25,7 @@ const App1 = () => {
         };
 
           getPosts()
-      })
+      },[posts])
 
       const indexOfLastPost = currentpage * postsperpage;
       const indexOfFirstPost = indexOfLastPost - postsperpage;
@@ -34,7 +34,7 @@ const App1 = () => {
       
     const paginate = pageNum => setCurrentpage(pageNum)
 
-    const lastPage = posts.length / postsperpage;
+    const lastPage = Math.ceil(posts.length / postsperpage)
 
     const nextPage = () => (currentpage === lastPage) ? setCurrentpage(currentpage) : setCurrentpage(currentpage + 1)                    
 
